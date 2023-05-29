@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import fetchBooks from "../../store/actions/booksCreator";
 import BookListItem from "./BookListItem";
 import Loading from "../isLoading/Loading";
-
+import Error from "./Error/Error";
 
 
 const Booklist = () => {
@@ -19,7 +19,7 @@ const Booklist = () => {
   console.log(books, booksIsError, booksIsLoading);
 
   if (booksIsError) {
-    return <div>error: {booksIsError}</div>;
+    return <div><Error /></div>;
   }
 
   return (

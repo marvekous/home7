@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setisOpen } from "../../store/reducers/cartSlice";
 import classes from "./styles.module.css";
 import { useEffect } from "react";
-import fetchAllCart from "../../store/actions/cartCreator";
+// import fetchAllCart from "../../store/actions/cartCreator";
 
 const Cartitems = () => {
   const { items, itemsIsError, itemsIsLoading } = useSelector(
@@ -12,7 +12,6 @@ const Cartitems = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAllCart());
     document.body.style.overflow = "hiden";
     return () => (document.body.style.overflow = "auto");
   }, []);
@@ -73,4 +72,4 @@ const Cartitems = () => {
   );
 };
 
- export default Cartitems;
+export default Cartitems;
